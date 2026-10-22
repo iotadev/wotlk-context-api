@@ -1,31 +1,18 @@
 # WOTLK native context adapter
 
-This directory is the canonical WOTLK adapter of the shared context project.
-Cata uses server-module; both feed the same wotlk_context reader/query/capture/MCP
-interfaces. The WOTLK profile targets AzerothCore build 12340 and matching native
-Playerbots. The distributed runtime configuration remains disabled by default.
-No SQL, gameplay control or model dependency is required by the observer.
+The native exporter for WOTLK build 12340 / AzerothCore. It copies scoped player
+state and observed Playerbots AI/master relationships for the `wotlk_context`
+query/MCP package. It defaults off and exposes no gameplay controls.
 
-## Installation and current qualification
+Install this directory as `modules/mod-game-context` in a compatible core source
+tree with statically linked Playerbots. Preserve the directory name: the loader is
+`Addmod_game_contextScripts`. Follow [installation and usage](../USAGE.md) for
+configuration and Python setup, and [qualification](../QUALIFICATION.md) for the
+historical build inputs and remaining runtime limits.
 
-Install this source as modules/mod-game-context in the chosen AzerothCore source
-checkout. Preserve the name: the static loader is Addmod_game_contextScripts.
-The module requires static linkage with Playerbots. Its generated header records
-actual adapter source hashes and the available Playerbots revision; also retain
-core dirty-input and executable identities with a qualified build.
-
-Install the module with the core's ordinary source/build workflow, then copy
-its distributed configuration to the configured runtime directory. Choose the
-character scope and snapshot destination explicitly; defaults keep the observer
-off. No particular Docker layout, image or pilot configuration is required.
-A source installation alone does not qualify a later changed binary.
-
-See [qualification history](../QUALIFICATION.md) and
-[shared handoff](../QUALIFICATION.md) for dated paired-build, self/other-master and
-separate-companion packet evidence. The historical pilot is not a current
-deployment claim. Cata completed far transfer, other controller transitions, production
-overhead and collision/physics remain outside this evidence. Companion completions
-were controlled fixtures, not real model qualification.
+The generated build header records adapter source hashes and the available
+Playerbots revision. Keep those alongside the actual core and binary identity
+when recording a native build or test result.
 
 ## Optional in-process reader
 
