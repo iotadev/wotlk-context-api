@@ -1,0 +1,9 @@
+{
+  "profile": "wotlk",
+  "build": 12340,
+  "package": "wotlk_context",
+  "core_package": "_wotlk_context_core",
+  "distribution": "wotlk-context-api",
+  "version": "0.4.0a1",
+  "native_module": "mod-game-context"
+}

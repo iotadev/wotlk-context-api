@@ -1,0 +1,9 @@
+# Optional read-only module; startup configuration only. No gameplay controls.
+ContextAPI.Enabled = 0
+# One to eight unique player GUID counters, comma separated (no whitespace).
+ContextAPI.Characters = ""
+ContextAPI.SnapshotFile = "context-api/snapshot.json"
+# 250-10000 ms. Sampling does not claim packet-complete movement.
+ContextAPI.IntervalMs = 1000
+# Optional native movement flags and unit speeds, not actual velocity or collision state.
+ContextAPI.Movement = 0

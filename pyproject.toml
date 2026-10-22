@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wotlk-context-api"
+version = "0.4.0a1"
+description = "Read-only WOTLK realm context, build 12340"
+readme = "README.md"
+license = "GPL-2.0-or-later"
+license-files = ["LICENSE", "NOTICE.md"]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+mcp = ["mcp==2.3.0"]
+
+[project.scripts]
+wotlk-context = "wotlk_context.cli:main"
+wotlk-context-mcp = "wotlk_context.mcp_server:main"
+
+[tool.setuptools.packages.find]
+include = ["wotlk_context*", "_wotlk_context_core*"]
